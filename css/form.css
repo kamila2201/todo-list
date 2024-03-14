@@ -4,6 +4,13 @@
     grid-column-gap: 20px;
 }
 
+@media (max-width: 768px) {
+    .form {
+        grid-template-columns: 1fr;
+        grid-row-gap: 10px;
+    }
+}
+
 .form__field {
     padding: 10px;
     border: 2px solid #eee;
