@@ -1,6 +1,13 @@
 .tasks {
     margin:0;
-    padding-top: 20px;
+    padding: 20px 0 0;
+    list-style-type: none;
+}
+
+.tasks__item {
+    display:grid;
+    grid-template-columns: auto 1fr auto;
+    grid-column-gap: 20px;
 }
 
 .tasks__content--done {
