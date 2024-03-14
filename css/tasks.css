@@ -24,6 +24,7 @@
     height: 40px;
     border:none;
     color: #fff;
+    cursor: pointer;
 }
 
 .tasks__button--delete {
