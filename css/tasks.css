@@ -8,7 +8,7 @@
     display:grid;
     grid-template-columns: auto 1fr auto;
     grid-column-gap: 20px;
-    margin: 10px;
+    margin: 10px 0;
 }
 
 .tasks__content {
