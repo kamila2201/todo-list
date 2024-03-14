@@ -11,10 +11,11 @@
     margin: 10px 0;
     padding: 0 10px 10px;
     border-bottom: 2px solid #eee;
+    align-items: center;
 }
 
 .tasks__content {
-    align-self: center;
+    word-break: break-word;
 }
 
 .tasks__content--done {
