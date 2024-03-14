@@ -8,8 +8,28 @@
     display:grid;
     grid-template-columns: auto 1fr auto;
     grid-column-gap: 20px;
+    margin: 10px;
+}
+
+.tasks__content {
+    align-self: center;
 }
 
 .tasks__content--done {
     text-decoration: line-through;
+}
+
+.tasks__button {
+    width: 40px;
+    height: 40px;
+    border:none;
+    color: #fff;
+}
+
+.tasks__button--delete {
+    background-color: #ff0000;
+}
+
+.tasks__button--done {
+    background-color: #008000;
 }
