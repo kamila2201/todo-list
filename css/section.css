@@ -23,3 +23,11 @@
     border-top: 2px solid #eee;
     padding: 20px;
 }
+
+.section__button {
+    border: none;
+    color: #017282;
+    background-color: transparent;
+    margin: 10px;
+    cursor: pointer;
+}
