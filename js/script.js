@@ -21,6 +21,27 @@
         render();
     };
 
+    const bindDeleteEvents = () => {
+        const deleteButtons = document.querySelectorAll(".js-delete");
+
+        deleteButtons.forEach((deleteButton, index) => {
+            deleteButton.addEventListener("click", () => {
+                deleteTask(index);
+            });
+        });
+    };
+
+    const bindToggleDoneEvents = () => {
+        const toggleDoneButtons = document.querySelectorAll(".js-done");
+
+        toggleDoneButtons.forEach((toggleDoneButton, index) => {
+            toggleDoneButton.addEventListener("click", () => {
+                toggleTaskDone(index);
+            });
+        });
+    }
+
+
     const render = () => {
         let htmlString = "";
 
@@ -36,37 +57,24 @@
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
 
-        const deleteButtons = document.querySelectorAll(".js-delete");
-        deleteButtons.forEach((deleteButton, index) => {
-            deleteButton.addEventListener("click", () => {
-                deleteTask(index);
-            });
-        });
+        bindDeleteEvents();
 
-        const toggleDoneButtons = document.querySelectorAll(".js-done");
-        toggleDoneButtons.forEach((toggleDoneButton, index) => {
-            toggleDoneButton.addEventListener("click", () => {
-                toggleTaskDone(index);
-            });
-        });
+        bindToggleDoneEvents();
+
     };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-            const newTaskElement = document.querySelector(".js-newTask");
-            const newTaskContent = newTaskElement.value.trim();
+        const newTaskElement = document.querySelector(".js-newTask");
+        const newTaskContent = newTaskElement.value.trim();
 
-            if (newTaskContent !== "") {
-                addNewTask(newTaskContent);
-                newTaskElement.value ="";
-            }
+        if (newTaskContent !== "") {
+            addNewTask(newTaskContent);
+            newTaskElement.value = "";
+        }
 
-            newTaskElement.focus();
-
-            
-
-
+        newTaskElement.focus();
     };
 
 
