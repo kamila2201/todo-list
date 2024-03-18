@@ -14,9 +14,22 @@
     justify-content: space-between;
 }
 
+@media (max-width:768px){
+    .section__container {
+        flex-direction:column;
+    }
+}
+
 .section__hidden {
     display:flex;
     justify-content: flex-end;
+}
+
+@media (max-width:768px){
+    .section__hidden {
+        flex-direction:column;
+        flex-basis: 100%;
+    }
 }
 
 .section__body {
