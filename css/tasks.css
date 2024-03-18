@@ -37,10 +37,10 @@
     background-color: rgb(255, 0, 0, 0.9);
 }
 
-.tasks__button--done {
+.tasks__button--toggleDone {
     background-color: #008000;
 }
 
-.tasks__button--done:hover {
+.tasks__button--toggleDone:hover {
     background-color: rgb(0, 128, 0, 0.9);
 }
