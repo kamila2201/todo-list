@@ -5,12 +5,11 @@
 
 .section__title {
     padding: 20px;
-    margin-bottom: 0;
+    margin: 0;
+    font-size: 20px;
 }
 
 .section__body {
     border-top: 2px solid #eee;
     padding: 20px;
 }
-
-
