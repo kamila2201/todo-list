@@ -1,55 +1,55 @@
 {
-    let tasks = [];
+	let tasks = [];
 
-    const addNewTask = (newTaskContent) => {
-        tasks = [
-            ...tasks,
-            { content: newTaskContent },
-        ];
+	const addNewTask = (newTaskContent) => {
+		tasks = [
+			...tasks,
+			{ content: newTaskContent },
+		];
 
-        render();
-    };
+		render();
+	};
 
-    const deleteTask = (taskIndex) => {
-        tasks = [
-            ...tasks.slice(0, taskIndex),
-            ...tasks.slice(taskIndex + 1),
-        ];
+	const deleteTask = (taskIndex) => {
+		tasks = [
+			...tasks.slice(0, taskIndex),
+			...tasks.slice(taskIndex + 1),
+		];
 
-        render();
-    };
+		render();
+	};
 
-    const toggleTaskDone = (taskIndex) => {
-        tasks = tasks.map((task, index) => index === taskIndex ? { ...task, done: !task.done } : task);
+	const toggleTaskDone = (taskIndex) => {
+		tasks = tasks.map((task, index) => index === taskIndex ? { ...task, done: !task.done } : task);
 
-        render();
-    };
+		render();
+	};
 
-    const bindDeleteEvents = () => {
-        const deleteButtons = document.querySelectorAll(".js-delete");
+	const bindDeleteEvents = () => {
+		const deleteButtons = document.querySelectorAll(".js-delete");
 
-        deleteButtons.forEach((deleteButton, taskIndex) => {
-            deleteButton.addEventListener("click", () => {
-                deleteTask(taskIndex);
-            });
-        });
-    };
+		deleteButtons.forEach((deleteButton, taskIndex) => {
+			deleteButton.addEventListener("click", () => {
+				deleteTask(taskIndex);
+			});
+		});
+	};
 
-    const bindToggleDoneEvents = () => {
-        const toggleDoneButtons = document.querySelectorAll(".js-done");
+	const bindToggleDoneEvents = () => {
+		const toggleDoneButtons = document.querySelectorAll(".js-done");
 
-        toggleDoneButtons.forEach((toggleDoneButton, taskIndex) => {
-            toggleDoneButton.addEventListener("click", () => {
-                toggleTaskDone(taskIndex);
-            });
-        });
-    }
+		toggleDoneButtons.forEach((toggleDoneButton, taskIndex) => {
+			toggleDoneButton.addEventListener("click", () => {
+				toggleTaskDone(taskIndex);
+			});
+		});
+	}
 
-    const renderTasks = () => {
-        let htmlString = "";
+	const renderTasks = () => {
+		let htmlString = "";
 
-        for (const task of tasks) {
-            htmlString += `
+		for (const task of tasks) {
+			htmlString += `
               <li class="tasks__item">
                 <button class="tasks__button tasks__button--toggleDone js-done">
                   ${task.done ? "✔" : ""}
@@ -62,40 +62,54 @@
                 </button>
               </li>
             `;
-        }
+		}
 
-        document.querySelector(".js-tasks").innerHTML = htmlString;
-    };
+		document.querySelector(".js-tasks").innerHTML = htmlString;
+	};
 
-    const render = () => {
-        renderTasks();
+	const renderButtons = () => {
+		let hiddenString = "";
 
-        bindDeleteEvents();
-        bindToggleDoneEvents();
+		if (tasks.length !== 0) {
+			hiddenString += `
+              <button class="section__button">Ukryj ukończone</button>
+              <button class="section__button">Ukończ wszystkie</button>
+            `;
+		}
 
-    };
+		document.querySelector(".js-buttons").innerHTML = hiddenString;
+	};
 
-    const onFormSubmit = (event) => {
-        event.preventDefault();
+	const render = () => {
+		renderTasks();
+		renderButtons();
 
-        const newTaskElement = document.querySelector(".js-newTask");
-        const newTaskContent = newTaskElement.value.trim();
+		bindDeleteEvents();
+		bindToggleDoneEvents();
 
-        if (newTaskContent !== "") {
-            addNewTask(newTaskContent);
-            newTaskElement.value = "";
-        }
+	};
 
-        newTaskElement.focus();
-    };
+	const onFormSubmit = (event) => {
+		event.preventDefault();
+
+		const newTaskElement = document.querySelector(".js-newTask");
+		const newTaskContent = newTaskElement.value.trim();
+
+		if (newTaskContent !== "") {
+			addNewTask(newTaskContent);
+			newTaskElement.value = "";
+		}
+
+		newTaskElement.focus();
+	};
 
 
-    const init = () => {
-        render();
+	const init = () => {
+		render();
 
-        const formElement = document.querySelector(".js-form");
-        formElement.addEventListener("submit", onFormSubmit);
-    };
+		const formElement = document.querySelector(".js-form");
+		formElement.addEventListener("submit", onFormSubmit);
+	};
 
-    init();
+	init();
 }
