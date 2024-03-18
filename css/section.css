@@ -9,6 +9,16 @@
     font-size: 20px;
 }
 
+.section__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section__hidden {
+    display:flex;
+    justify-content: flex-end;
+}
+
 .section__body {
     border-top: 2px solid #eee;
     padding: 20px;
