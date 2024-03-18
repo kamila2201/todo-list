@@ -7,7 +7,7 @@
     padding: 20px;
     margin: 0;
     font-size: 20px;
-    font-weight: 700px;
+    font-weight: 700;
 }
 
 .section__container {
@@ -39,10 +39,11 @@
 }
 
 .section__button {
+    margin: 10px;
+    font-size: 20px;
     border: none;
     color: teal;
     background-color: transparent;
-    margin: 10px;
     cursor: pointer;
     transition: color 0.3s;
 }
