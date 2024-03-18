@@ -21,8 +21,10 @@
     background-color: #017282;
     border: none;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .form__button:hover {
     background-color: rgb(1, 114, 130, 0.9);
+    transform: scale(1.1);
 }
