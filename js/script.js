@@ -101,20 +101,22 @@
 	};
 
 	const renderButtons = () => {
-		let htmlButtonString = "";
+		const buttonsElement = document.querySelector(".js-buttons");
 
-		if (tasks.length !== 0) {
-			htmlButtonString += `
-              <button class="section__button js-hideDoneTasks">
-							  ${hideDoneTasks && tasks.some(({ done }) => done) ? "Pokaż" : "Ukryj"} ukończone
-							</button>
-              <button class="section__button js-markAllTasksDone" ${tasks.every(({ done }) => done) ? "disabled" : ""}>
-							  Ukończ wszystkie
-							</button>
-            `;
+		if (!tasks.length) {
+			buttonsElement.innerHTML = "";
+			return;
 		}
 
-		document.querySelector(".js-buttons").innerHTML = htmlButtonString;
+		buttonsElement.innerHTML = `
+		<button class="section__button js-hideDoneTasks">
+			${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
+		</button>
+		<button class="section__button js-markAllTasksDone" ${tasks.every(({ done }) => done) ? "disabled" : ""}>
+			Ukończ wszystkie
+		</button>
+	`;
+
 	};
 
 	const render = () => {
