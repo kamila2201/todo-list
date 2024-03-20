@@ -12,6 +12,7 @@
 
 .buttons__button {
     margin: 10px;
+    padding:0;
     font-size: 20px;
     border: none;
     color: teal;
