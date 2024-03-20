@@ -10,26 +10,14 @@
     font-weight: 700;
 }
 
-.section__container {
+.section__header {
     display: flex;
     justify-content: space-between;
 }
 
 @media (max-width:768px){
-    .section__container {
+    .section__header {
         flex-direction:column;
-    }
-}
-
-.section__hidden {
-    display:flex;
-    justify-content: flex-end;
-}
-
-@media (max-width:768px){
-    .section__hidden {
-        flex-direction:column;
-        flex-basis: 100%;
     }
 }
 
@@ -38,20 +26,3 @@
     padding: 20px;
 }
 
-.section__button {
-    margin: 10px;
-    font-size: 20px;
-    border: none;
-    color: teal;
-    background-color: transparent;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.section__button:hover {
-    color: hsl(180, 100%, 30%);
-}
-
-.section__button:disabled {
-    color: #bdb8b8;
-}
