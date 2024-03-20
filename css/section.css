@@ -7,20 +7,23 @@
 }
 
 .section__title {
-    padding: 20px;
     margin: 0;
     font-size: 20px;
     font-weight: 700;
 }
 
 .section__header {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
     justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 }
 
 @media (max-width:768px) {
     .section__header {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
 }
 
